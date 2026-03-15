@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-blue: #3470ff;
+  --hover-blue: #0b44cd;
+  --text-black: #121417;
+  --text-gray: rgba(18, 20, 23, 0.5);
+  --bg-input: #f7f7fb;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  color: var(--text-black);
+  background-color: #ffffff;
+}
+
+/* Вимога ТЗ: курсор-поінтер для всіх інтерактивних елементів */
+button,
+a,
+select {
+  cursor: pointer !important;
+}
+
+/* Стилізація полів фільтрації (як на скріншоті) */
+.filter-label {
+  color: #8a8a89;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.filter-input {
+  background-color: var(--bg-input);
+  border: none;
+  border-radius: 14px;
+  padding: 14px 18px;
+  font-size: 18px;
+  font-weight: 500;
+  outline: none;
+}
+
+/* Картки автомобілів */
+.car-card-img {
+  border-radius: 14px;
+  object-fit: cover;
+  width: 100%;
+  height: 268px;
+  background: linear-gradient(
+      180deg,
+      rgba(18, 20, 23, 0.5) 0%,
+      rgba(18, 20, 23, 0) 100%
+    ),
+    #f3f3f2;
+}
+
+.car-title {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.car-info-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  color: var(--text-gray);
+  font-size: 12px;
+  margin-top: 8px;
+}
+
+.car-info-item {
+  position: relative;
+}
+
+.car-info-item:not(:last-child)::after {
+  content: "";
+  display: inline-block;
+  width: 1px;
+  height: 16px;
+  background-color: rgba(18, 20, 23, 0.1);
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
+/* Кнопка Read More */
+.btn-primary {
+  background-color: var(--primary-blue);
+  color: white;
+  border-radius: 12px;
+  padding: 12px;
+  font-weight: 600;
+  font-size: 14px;
+  transition: background-color 0.2s;
+  display: block;
+  text-align: center;
+  width: 100%;
+}
+
+.btn-primary:hover {
+  background-color: var(--hover-blue);
+}
+
+/* Форма пошуку (Search) */
+.btn-search {
+  background-color: var(--primary-blue);
+  color: white;
+  padding: 14px 44px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 14px;
+  border: none;
+}
